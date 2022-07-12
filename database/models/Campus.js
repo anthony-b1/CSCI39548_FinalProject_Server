@@ -13,6 +13,11 @@ const Campus = db.define("campus", {
     allowNull: false
   },
 
+  imageUrl: {
+    type: Sequelize.STRING,
+    defaultValue: "https://picsum.photos/id/1076/300/200"
+  },
+
   address: {
     type: Sequelize.STRING,
     allowNull: false
