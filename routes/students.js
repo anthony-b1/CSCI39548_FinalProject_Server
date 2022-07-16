@@ -65,5 +65,14 @@ router.put('/:id', ash(async(req, res) => {
   res.status(201).json(student);
 }));
 
+/* PATCH STUDENT */
+router.patch('/:id', ash(async(req, res) => {
+  Student.update(req.body,
+        { where: {id: req.params.id} }
+  )
+  .then(() => res.status(200).json("Unenroll a student!"))
+  .catch(err => next(err));
+}));
+
 // Export router, so that it can be imported to construct the apiRouter (app.js)
 module.exports = router;
